@@ -163,7 +163,7 @@ for j in samePlaceAndBranch{
 
 func hobbyAndExperience(arr : [Info]){
     for i in arr{
-        if i.hobbies != nil{
+        if i.hobbies != nil && i.hobbies != ""{
             print("Name is \(i.name) and Experience is \(i.experience)")
         }
     }
@@ -181,7 +181,7 @@ hobbyAndExperience(arr: arrInfo)
 func matchString(arr : [Professional]) -> [String]{
     var list3 = [String]()
     for i in arr{
-        if i.name.contains("S") || i.name.contains("s"){
+        if i.name.first == "S" || i.name.first == "s"{
             list3.append(i.name)
         }
     }
