@@ -156,7 +156,7 @@ print("nameStr is now \(nameStr), and surNameStr is now \(sureNameStr)")
 //Q7:- Explain the difference between map and compactMap with an example.
 //Sol:
 
-//Map : map() will take a value out of its container, transform it using the code you specify, then put it back in its container. In this case, that means taking a number out of an array, doubling it, and putting it back in a new array.
+//Map : map() will take a value out of its container, transform it using the code you specify, then put it back in its container. Map returns an array containing the results of mapping the given closure over the sequence’s elements.
 
 //Map Example :-
 var numArr = [1,2,3,4,5,6]
