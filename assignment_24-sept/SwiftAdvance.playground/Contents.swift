@@ -189,7 +189,7 @@ var newNumArr4 = numArr.map{
 }
 print(newNumArr4)
 
-//Compact map : compactMap() performs a transformation on the collection based on the conditions specified by user but then unwraps all the optionals and discards any that are nil.
+//Compact map : compactMap() performs a transformation on the collection based on the conditions specified by user but then unwraps all the optionals and discards any that are nil. It cleans the sequence, therefore, you will receive a non-optional sequence.
 
 //Compact map Example :-
 let newArray5 = numArr.compactMap({(value: Int) -> Int in
