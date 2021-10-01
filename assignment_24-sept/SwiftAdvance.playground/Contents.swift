@@ -10,13 +10,13 @@ import UIKit
         *Define subscripts
         *Define and use new nested types
         *Make an existing type conform to a protocol
- 
+
  <<-syntax->>
- 
+
  extension ClassStructEnumOrProtocolNameGoesHere {
          //add functionality to the above type
      }
- 
+
  */
 
 
@@ -29,7 +29,7 @@ class LoginTextFieldViewController: UIViewController {
 }
 
 extension LoginTextFieldViewController: UITextFieldDelegate {
-    
+
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
             print("TextField should begin editing method called")
             return true;
@@ -47,37 +47,41 @@ extension LoginTextFieldViewController: UITextFieldDelegate {
 
 
 /*Q3:- Write a protocol and create an extension of the protocol. In extension create a function
- 
+
       func sayHello() {
- 
+
        print(“Hello!”)
- 
+
     }
 */
 //Sol:
 protocol Greet {
-    func greet() -> String
+    func userGreet(greet : String)
 }
 
-class A {
+class A : Greet{
     var name: String
-    
+
     init(name: String) {
         self.name = name
     }
+    func userGreet(greet : String) {
+        print("\(greet) \(name)")
+    }
+
 }
 
-extension A: Greet {
-    
-    func greet() -> String {
-        print("Hello!")
-        return "Hello!, \(name)"
+extension Greet {
+
+    func leaving() {
+        print("Good Bye!")
     }
 }
 
 
-var a = A(name: "Satyam")
-a.greet()
+var a = A(name: "User")
+a.userGreet(greet: "hello")
+a.leaving()
 
 
 //4.Write an enum and create an extension of the enum.
@@ -94,7 +98,7 @@ extension Direction {
     var value: String {
         return self.rawValue
     }
-    
+
     func printDirection() {
         switch self {
         case .east:
@@ -116,7 +120,7 @@ Direction.south.printDirection()
 /*Q5:-What is Generic?
  Sol:
  1- Generic code enables you to write flexible, reusable functions and types that can work with any type, subject to requirements that you define. You can write code that avoids duplication and expresses its intent in a clear, abstracted manner.
- 
+
  2-  more clearely, we can make such kind of functions and types , which can work with any type like (int, string, struct, etc....).
 
  3-  with Generic we can write a function once and use it on different types.
@@ -152,6 +156,8 @@ print("nameStr is now \(nameStr), and surNameStr is now \(sureNameStr)")
 //Q7:- Explain the difference between map and compactMap with an example.
 //Sol:
 
+//Map : map() will take a value out of its container, transform it using the code you specify, then put it back in its container. In this case, that means taking a number out of an array, doubling it, and putting it back in a new array.
+
 //Map Example :-
 var numArr = [1,2,3,4,5,6]
 
@@ -177,12 +183,13 @@ var newNumArr3 = numArr.map{ value in
 print(newNumArr3)
 
 
-// map4
+// Map4
 var newNumArr4 = numArr.map{
     return $0 * 2
 }
 print(newNumArr4)
 
+//Compact map : compactMap() performs a transformation on the collection based on the conditions specified by user but then unwraps all the optionals and discards any that are nil.
 
 //Compact map Example :-
 let newArray5 = numArr.compactMap({(value: Int) -> Int in
@@ -221,7 +228,7 @@ let newValues = values2.reduce(1000) {
 //Sol:
 
 struct Person {
-    
+
     var name : String
     var age : Int
 }
@@ -245,7 +252,7 @@ print(ageCompare)
 @propertyWrapper
 struct NonNegative<Value: BinaryInteger> {
     var value: Value
-    
+
     init(wrappedValue: Value) {
         if wrappedValue < 0 {
             self.value = 0
@@ -253,7 +260,7 @@ struct NonNegative<Value: BinaryInteger> {
             self.value = wrappedValue
         }
     }
-    
+
     var wrappedValue: Value {
         get { value }
         set {
