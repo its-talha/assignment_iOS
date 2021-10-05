@@ -2,7 +2,7 @@
 //  NavigationController_DemoUITests.swift
 //  NavigationController_DemoUITests
 //
-//  Created by Mohd Talha  on 04/10/21.
+//  Created by Mohammad Talha on 05/10/21.
 //
 
 import XCTest
@@ -32,7 +32,7 @@ class NavigationController_DemoUITests: XCTestCase {
     }
 
     func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
+        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.
             measure(metrics: [XCTApplicationLaunchMetric()]) {
                 XCUIApplication().launch()

@@ -2,7 +2,7 @@
 //  ThirdPage_VC.swift
 //  NavigationController_Demo
 //
-//  Created by Mohd Talha  on 04/10/21.
+//  Created by Mohammad Talha on 05/10/21.
 //
 
 import UIKit
@@ -14,9 +14,11 @@ class ThirdPage_VC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-}
     
 
+    @IBAction func DismissBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
@@ -26,15 +28,5 @@ class ThirdPage_VC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    extension ThirdPage_VC {
-        @IBAction func dismissVCButton(_ sender: UIButton) {
-            dissmisVC()
-        }
-    }
 
-    extension ThirdPage_VC {
-        func dissmisVC(){
-            self.dismiss(animated: true, completion: nil)
-        }
-
-    }
+}

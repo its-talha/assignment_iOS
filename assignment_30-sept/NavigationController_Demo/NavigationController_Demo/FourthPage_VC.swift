@@ -1,13 +1,13 @@
 //
-//  SecondPage_VC.swift
+//  FourthPage_VC.swift
 //  NavigationController_Demo
 //
-//  Created by Mohammad Talha on 05/10/21.
+//  Created by Mohammad Talha on 06/10/21.
 //
 
 import UIKit
 
-class SecondPage_VC: UIViewController {
+class FourthPage_VC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,18 +15,16 @@ class SecondPage_VC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func PresentNextpage(_ sender: Any) {
-                let vc = myStoryboard.instantiateViewController(withIdentifier: "ThirdVC") as? ThirdPage_VC
-                
-                self.navigationController?.present(vc!, animated: true, completion: nil)
-    }
     
-    @IBAction func PushFourthpage(_ sender: Any) {
-        let vc = myStoryboard.instantiateViewController(withIdentifier: "FourthVC") as? FourthPage_VC
+    @IBAction func PushFifthpage(_ sender: Any) {
+        let vc = myStoryboard.instantiateViewController(withIdentifier: "FifthVC") as? FifthPage_VC
         
         self.navigationController?.pushViewController(vc!, animated: true)
     }
 
+    @IBAction func popThisVC(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     /*
     // MARK: - Navigation
 
