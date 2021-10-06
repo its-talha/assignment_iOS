@@ -11,6 +11,10 @@ class FourthPage_VC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let nav = self.navigationController?.navigationBar
+        nav?.prefersLargeTitles = true
+        nav?.tintColor = UIColor.black
+        nav?.backItem?.title = "Fourth screen"
 
         // Do any additional setup after loading the view.
     }

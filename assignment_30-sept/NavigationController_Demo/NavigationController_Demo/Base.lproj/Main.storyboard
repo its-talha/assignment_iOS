@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First PageVC-->
+        <!--First Screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="FirstPage_VC" customModule="NavigationController_Demo" customModuleProvider="target" sceneMemberID="viewController">
@@ -48,7 +48,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZXX-ar-ONX" secondAttribute="bottom" constant="274" id="OSN-1c-ktQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="YCs-Bd-Fw7"/>
+                    <navigationItem key="navigationItem" title="First Screen" largeTitleDisplayMode="always" id="YCs-Bd-Fw7"/>
                     <connections>
                         <outlet property="InputText" destination="NR3-1f-23L" id="YkE-kZ-eqw"/>
                     </connections>
@@ -57,7 +57,7 @@
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="62.946428571428569"/>
         </scene>
-        <!--Second PageVC-->
+        <!--Second screen-->
         <scene sceneID="X1y-6Z-u67">
             <objects>
                 <viewController storyboardIdentifier="SecondVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HT7-gw-PwO" customClass="SecondPage_VC" customModule="NavigationController_Demo" customModuleProvider="target" sceneMemberID="viewController">
@@ -95,7 +95,7 @@
                             <constraint firstItem="dpc-8s-V3M" firstAttribute="bottom" secondItem="DBO-QN-wPg" secondAttribute="bottom" constant="274" id="cPT-YR-vHL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="a4I-Ot-kxe"/>
+                    <navigationItem key="navigationItem" title="Second screen" id="a4I-Ot-kxe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hku-6d-4Vz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -141,7 +141,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUn-kz-YMH">
-                                <rect key="frame" x="103" y="425" width="208" height="46"/>
+                                <rect key="frame" x="103" y="542" width="208" height="46"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <state key="normal" title="Go to Fifth page"/>
                                 <connections>
@@ -149,7 +149,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofz-S1-uii">
-                                <rect key="frame" x="135.5" y="537" width="143" height="51"/>
+                                <rect key="frame" x="135.5" y="422.5" width="143" height="51"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
                                 <state key="normal" title="Pop back">
                                     <color key="titleColor" systemColor="systemRedColor"/>
@@ -162,12 +162,10 @@
                         <viewLayoutGuide key="safeArea" id="8iM-Np-RrL"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yUn-kz-YMH" firstAttribute="centerX" secondItem="PVd-wQ-dbW" secondAttribute="centerX" id="0Dn-pb-PgS"/>
-                            <constraint firstItem="yUn-kz-YMH" firstAttribute="centerX" secondItem="PVd-wQ-dbW" secondAttribute="centerX" id="6fq-Dd-B8Y"/>
-                            <constraint firstItem="Ofz-S1-uii" firstAttribute="centerX" secondItem="PVd-wQ-dbW" secondAttribute="centerX" id="84o-dq-DFR"/>
-                            <constraint firstItem="yUn-kz-YMH" firstAttribute="centerY" secondItem="PVd-wQ-dbW" secondAttribute="centerY" id="C4y-RR-I0R"/>
-                            <constraint firstItem="8iM-Np-RrL" firstAttribute="bottom" secondItem="Ofz-S1-uii" secondAttribute="bottom" constant="274" id="L4u-9j-7f5"/>
-                            <constraint firstItem="yUn-kz-YMH" firstAttribute="centerY" secondItem="PVd-wQ-dbW" secondAttribute="centerY" id="xyb-Q3-TsN"/>
+                            <constraint firstItem="yUn-kz-YMH" firstAttribute="centerX" secondItem="PVd-wQ-dbW" secondAttribute="centerX" id="O85-Iq-QKt"/>
+                            <constraint firstItem="Ofz-S1-uii" firstAttribute="centerX" secondItem="PVd-wQ-dbW" secondAttribute="centerX" id="abS-sZ-jX9"/>
+                            <constraint firstItem="8iM-Np-RrL" firstAttribute="bottom" secondItem="yUn-kz-YMH" secondAttribute="bottom" constant="274" id="ocg-To-NqN"/>
+                            <constraint firstItem="Ofz-S1-uii" firstAttribute="centerY" secondItem="PVd-wQ-dbW" secondAttribute="centerY" id="vfD-sA-tqf"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -228,9 +226,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cgj-14-i6q" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uh9-Ui-wdA">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" largeTitles="YES" id="Uh9-Ui-wdA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemGroupedBackgroundColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
