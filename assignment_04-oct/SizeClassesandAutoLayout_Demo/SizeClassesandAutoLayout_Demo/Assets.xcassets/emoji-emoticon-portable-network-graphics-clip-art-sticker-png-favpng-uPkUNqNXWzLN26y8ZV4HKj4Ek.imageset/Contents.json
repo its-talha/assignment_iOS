@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "emoji-emoticon-portable-network-graphics-clip-art-sticker-png-favpng-uPkUNqNXWzLN26y8ZV4HKj4Ek.jpeg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
