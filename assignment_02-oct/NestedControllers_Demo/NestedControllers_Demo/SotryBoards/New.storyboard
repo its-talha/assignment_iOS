@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kbe-rk-Uet">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--UsersVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="UsersVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="UsersVC" customModule="iOSAssessment_8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mL2-LP-U8a">
+                                <rect key="frame" x="169.5" y="430" width="75" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.61696208476687264" green="0.68918541946241485" blue="0.62100283056245065" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mL2-LP-U8a" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="60k-x5-zur"/>
+                            <constraint firstItem="mL2-LP-U8a" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="8lK-Ji-wQd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SFN-2r-lT4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839.1304347826087" y="46.875"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nBq-Q7-4aR">
+            <objects>
+                <viewController id="8R2-xh-zjh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BB2-Dm-pZR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WISHLIST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khj-Le-ORg">
+                                <rect key="frame" x="140" y="430" width="134" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ev7-Yn-e2p"/>
+                        <color key="backgroundColor" red="0.57611839833907674" green="0.76658639853220234" blue="0.83907120648552391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Khj-Le-ORg" firstAttribute="centerY" secondItem="BB2-Dm-pZR" secondAttribute="centerY" id="FKZ-XD-109"/>
+                            <constraint firstItem="Khj-Le-ORg" firstAttribute="centerX" secondItem="BB2-Dm-pZR" secondAttribute="centerX" id="lrk-kf-86y"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="APm-1F-fyw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eP7-7w-EUn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="929" y="750"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="Ccb-0h-Ger">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="VOv-3m-xQP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.circle.fill" catalog="system" id="tMn-gj-h99"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ein-e3-zzE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zdc-fd-pDp">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="baL-Ew-Qbb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aLO-wQ-MXE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="46.875"/>
+        </scene>
+        <!--Wishlist-->
+        <scene sceneID="gUj-N4-fQK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e7P-tl-RLA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Wishlist" image="suit.heart.fill" catalog="system" id="AQe-m2-JlI"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h7Z-HJ-ZSe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8R2-xh-zjh" kind="relationship" relationship="rootViewController" id="DQe-Si-BOc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zi1-lp-nKr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="19" y="750"/>
+        </scene>
+        <!--New TabVC-->
+        <scene sceneID="0je-0U-66a">
+            <objects>
+                <tabBarController storyboardIdentifier="NewVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kbe-rk-Uet" customClass="NewTabVC" customModule="iOSAssessment_8" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7a3-Jb-ung">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.19958832427271425" green="0.10897039600441523" blue="0.36934182078567979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="VOv-3m-xQP" kind="relationship" relationship="viewControllers" id="jAP-og-A92"/>
+                        <segue destination="e7P-tl-RLA" kind="relationship" relationship="viewControllers" id="4DS-Zb-Zpe"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xu6-Yg-5on" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="46.875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="suit.heart.fill" catalog="system" width="128" height="109"/>
+    </resources>
+</document>
