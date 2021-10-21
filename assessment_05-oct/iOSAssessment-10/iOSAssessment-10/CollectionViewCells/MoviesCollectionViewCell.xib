@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MoviesCollectionViewCell" id="gTV-IL-0wX" customClass="MoviesCollectionViewCell" customModule="iOSAssessment_10" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="154" height="160"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="154" height="160"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Nj-8J-g6S">
+                        <rect key="frame" x="0.0" y="0.0" width="154" height="160"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="jwE-k1-EGC">
+                                <rect key="frame" x="0.0" y="0.0" width="154" height="160"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <constraints>
+                            <constraint firstItem="jwE-k1-EGC" firstAttribute="leading" secondItem="7Nj-8J-g6S" secondAttribute="leading" id="17L-bN-dAO"/>
+                            <constraint firstAttribute="bottom" secondItem="jwE-k1-EGC" secondAttribute="bottom" id="3bX-9j-ueJ"/>
+                            <constraint firstAttribute="trailing" secondItem="jwE-k1-EGC" secondAttribute="trailing" id="NsD-mU-P4u"/>
+                            <constraint firstItem="jwE-k1-EGC" firstAttribute="top" secondItem="7Nj-8J-g6S" secondAttribute="top" id="Xcw-RM-oa9"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="7Nj-8J-g6S" secondAttribute="trailing" id="1uM-NU-8Ja"/>
+                <constraint firstItem="7Nj-8J-g6S" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9qJ-iO-6W3"/>
+                <constraint firstAttribute="bottom" secondItem="7Nj-8J-g6S" secondAttribute="bottom" id="uyT-wf-Kk4"/>
+                <constraint firstItem="7Nj-8J-g6S" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="zlW-b0-LRo"/>
+            </constraints>
+            <size key="customSize" width="154" height="160"/>
+            <point key="canvasLocation" x="213.04347826086959" y="98.4375"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Image" width="480" height="480"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
