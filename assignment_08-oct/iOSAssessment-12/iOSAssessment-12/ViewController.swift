@@ -7,6 +7,7 @@
 
 import UIKit
 
+//extension for downloading image and setting to imageView
 extension UIImageView {
     func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
         contentMode = mode
@@ -27,87 +28,59 @@ extension UIImageView {
         downloaded(from: url, contentMode: mode)
     }
 }
-
-
-struct Images : Decodable{
-    let author : String
-    let id : Int
-    let author_url : String
-}
-
+//Link for downloading particular image
 let defaultLink = "https://picsum.photos/200/300?image="
 
 class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate{
-
-    @IBOutlet weak var collectionView: UICollectionView!
     
-    var imageList = [Images]()
+    @IBOutlet weak var collectionView: UICollectionView!
+    let network = NetworkFile()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavBar()
-        
+        network.callingApi()
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-        let url = URL(string: "https://picsum.photos/list")
-        URLSession.shared.dataTask(with: url!){(data,response,error) in
-            if error == nil{
-                
-                do{
-                self.imageList = try JSONDecoder().decode([Images].self, from: data!)
-                }catch{
-                    print("Parse Error")
-                }
-                
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            }
-        }.resume()
-        
     }
     
+//    static func reloadData() {
+//        self.collectionView.reloadData()
+//    }
+    
+    //Customizing the Navbar
     func setUpNavBar(){
-        
         navigationController?.navigationBar.barTintColor = UIColor.gray
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barStyle = .black
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(
-//            barButtonSystemItem: .camera, target: nil, action: nil)
-    
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageList.count
+        return network.imageList.count
     }
 
+    //populating the collectionView with data from API
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
-        
-        cell.nameLbl.text = imageList[indexPath.row].author.capitalized
-        cell.imageView.contentMode = .scaleToFill
-        
-        let completeLink = defaultLink + String(imageList[indexPath.row].id)
-        
+        cell.nameLbl.text = network.imageList[indexPath.row].author.capitalized
+        let completeLink = defaultLink + String(network.imageList[indexPath.row].id)
         cell.imageView.downloaded(from: completeLink)
-        cell.imageView.contentMode = .scaleToFill
         return cell
     }
     
+    //handling the click of item in collectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "SecondVC") as? SecondVC
-        vc?.imageId = String(imageList[indexPath.row].id)
-        vc?.author_url = String(imageList[indexPath.row].author_url)
+        vc?.imageId = String(network.imageList[indexPath.row].id)
+        vc?.author_url = String(network.imageList[indexPath.row].author_url)
 
         self.navigationController?.pushViewController(vc!, animated: true)
     }
-    
 }
 
-
+//Conforming to flow layout and designing collectionView
 extension ViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView,

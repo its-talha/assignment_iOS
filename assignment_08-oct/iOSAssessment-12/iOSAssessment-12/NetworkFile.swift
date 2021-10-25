@@ -6,3 +6,33 @@
 //
 
 import Foundation
+
+struct Images : Decodable{
+    let author : String
+    let id : Int
+    let author_url : String
+}
+
+class NetworkFile {
+    
+    var imageList = [Images]()
+    
+    func callingApi(){
+        
+        let url = URL(string: "https://picsum.photos/list")
+        URLSession.shared.dataTask(with: url!){(data,response,error) in
+            if error == nil{
+                
+                do{
+                self.imageList = try JSONDecoder().decode([Images].self, from: data!)
+                }catch{
+                    print("Parse Error")
+                }
+                
+//                DispatchQueue.main.async {
+//                    ViewController.reloadData()
+//                }
+            }
+        }.resume()
+    }
+}

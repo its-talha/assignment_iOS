@@ -44,6 +44,8 @@ class SecondVC: UIViewController {
     }
     
     @IBAction func openUrl(_ sender: UIButton) {
-        UIApplication.shared.openURL(NSURL(string: author_url)! as URL)
+        if let url = URL(string: author_url){
+            UIApplication.shared.open(url)
+        }
     }
 }
