@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		112D16ED2726C30200F503A6 /* CallingApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112D16EC2726C30200F503A6 /* CallingApi.swift */; };
+		112D16F02726D25C00F503A6 /* TheoryAns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112D16EF2726D25C00F503A6 /* TheoryAns.swift */; };
 		11E6E6D827219D45001CBEDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E6E6D727219D45001CBEDE /* AppDelegate.swift */; };
 		11E6E6DA27219D45001CBEDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E6E6D927219D45001CBEDE /* SceneDelegate.swift */; };
 		11E6E6DC27219D45001CBEDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E6E6DB27219D45001CBEDE /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		112D16EC2726C30200F503A6 /* CallingApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallingApi.swift; sourceTree = "<group>"; };
+		112D16EF2726D25C00F503A6 /* TheoryAns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryAns.swift; sourceTree = "<group>"; };
 		11E6E6D427219D45001CBEDE /* iOS-Assessment13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Assessment13.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E6E6D727219D45001CBEDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11E6E6D927219D45001CBEDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				11E6E6D927219D45001CBEDE /* SceneDelegate.swift */,
 				11E6E6DB27219D45001CBEDE /* ViewController.swift */,
 				112D16EC2726C30200F503A6 /* CallingApi.swift */,
+				112D16EF2726D25C00F503A6 /* TheoryAns.swift */,
 				11E6E6DD27219D45001CBEDE /* Main.storyboard */,
 				11E6E6EC2721BC8D001CBEDE /* CustomCell.swift */,
 				11E6E6E027219D46001CBEDE /* Assets.xcassets */,
@@ -148,6 +151,7 @@
 				11E6E6D827219D45001CBEDE /* AppDelegate.swift in Sources */,
 				11E6E6ED2721BC8D001CBEDE /* CustomCell.swift in Sources */,
 				11E6E6DA27219D45001CBEDE /* SceneDelegate.swift in Sources */,
+				112D16F02726D25C00F503A6 /* TheoryAns.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
