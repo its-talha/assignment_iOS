@@ -35,13 +35,18 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     @IBOutlet weak var collectionView: UICollectionView!
     let network = NetworkFile()
+    var imageList = [Images]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavBar()
-        network.callingApi()
+        imageList = network.callingApi()
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        for i in imageList{
+            print(i.id,":",i.author)
+        }
     }
     
 //    static func reloadData() {
@@ -56,15 +61,15 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return network.imageList.count
+        return imageList.count
     }
 
     //populating the collectionView with data from API
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
-        cell.nameLbl.text = network.imageList[indexPath.row].author.capitalized
-        let completeLink = defaultLink + String(network.imageList[indexPath.row].id)
+        cell.nameLbl.text = imageList[indexPath.row].author.capitalized
+        let completeLink = defaultLink + String(imageList[indexPath.row].id)
         cell.imageView.downloaded(from: completeLink)
         return cell
     }
@@ -73,8 +78,8 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "SecondVC") as? SecondVC
-        vc?.imageId = String(network.imageList[indexPath.row].id)
-        vc?.author_url = String(network.imageList[indexPath.row].author_url)
+        vc?.imageId = String(imageList[indexPath.row].id)
+        vc?.author_url = String(imageList[indexPath.row].author_url)
 
         self.navigationController?.pushViewController(vc!, animated: true)
     }
