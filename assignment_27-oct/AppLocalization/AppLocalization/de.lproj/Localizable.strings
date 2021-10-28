@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  AppLocalization
+
+ Created by Mohammad Talha on 28/10/21.
+  
+*/
+"title" = "Infoseite";
+"namekey" = "Name :";
+"statekey" = "Zustand :";
+"countrykey" = "Land :";
+"dobkey" = "Geburtsdatum :";
+"lotterykey" = "Lotterie gewonnen :";
