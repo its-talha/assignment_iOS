@@ -7,11 +7,17 @@
 
 import Foundation
 
+protocol CallingApiDelegate {
+    func successfulResponse(arr : [Images])
+    func failedwithError(error : String)
+}
+
 class NetworkFile {
     
     var list = [Images]()
+    var delegate : CallingApiDelegate?
     
-    func callingApi() -> [Images]{
+    func callingApi(){
         
         let url = URL(string: "https://picsum.photos/list")
         URLSession.shared.dataTask(with: url!){(data,response,error) in
@@ -19,18 +25,13 @@ class NetworkFile {
                 
                 do{
                 self.list = try JSONDecoder().decode([Images].self, from: data!)
+                    self.delegate?.successfulResponse(arr: self.list)
                 }catch{
                     print("Parse Error")
+                    self.delegate?.failedwithError(error: "Parse Error")
                 }
-                
-                DispatchQueue.main.async {
-//                    ViewController.reloadData()
-                }
-
             }
         }.resume()
-        
-        return list
     }
 }
 

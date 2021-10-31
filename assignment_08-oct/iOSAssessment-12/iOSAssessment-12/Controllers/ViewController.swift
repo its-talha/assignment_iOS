@@ -8,26 +8,7 @@
 import UIKit
 
 //extension for downloading image and setting to imageView
-extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() { [weak self] in
-                self?.image = image
-            }
-        }.resume()
-    }
-    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
-    }
-}
+
 //Link for downloading particular image
 let defaultLink = "https://picsum.photos/200/300?image="
 
@@ -40,7 +21,8 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavBar()
-        imageList = network.callingApi()
+        network.delegate = self
+        network.callingApi()
         collectionView.dataSource = self
         collectionView.delegate = self
         
@@ -111,5 +93,19 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20
     }
+    
+}
+extension ViewController : CallingApiDelegate{
+    func successfulResponse(arr: [Images]) {
+        imageList = arr
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
+    
+    func failedwithError(error: String) {
+        print(error)
+    }
+    
     
 }

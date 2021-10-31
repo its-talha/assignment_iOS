@@ -39,7 +39,7 @@ class SecondVC: UIViewController {
         navigationItem.title = "Gallery App"
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "power"), style: .plain, target: self, action: nil)
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "back", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.topItem?.title = ""
     
     }
     
