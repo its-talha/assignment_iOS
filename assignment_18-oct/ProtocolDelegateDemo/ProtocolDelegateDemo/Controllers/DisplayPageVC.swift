@@ -7,22 +7,21 @@
 
 import UIKit
 
-class DisplayPageVC: UIViewController, DataPageDelegate{
-    
-    @IBOutlet weak var nameLbl: UILabel!
-    @IBOutlet weak var ageLbl: UILabel!
-    @IBOutlet weak var pNameLbl: UILabel!
+class DisplayPageVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let vc = DataPageVC()
-        vc.delegate = self
+                
+    }
+    //Button action for setting notification as facebook type
+    @IBAction func fbSetBtn(_ sender: Any) {
+        NotificationCenter.default.post(name: .facebook, object: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
-    func saveData(profile: Profile) {
-        nameLbl.text = profile.name
-        ageLbl.text = profile.age
-        pNameLbl.text = profile.pName
+    //Button action for setting notification as twitter type
+    @IBAction func twSetBtn(_ sender: Any) {
+        NotificationCenter.default.post(name: .twitter, object: nil)
+        self.navigationController?.popViewController(animated: true)
     }
-
 }
