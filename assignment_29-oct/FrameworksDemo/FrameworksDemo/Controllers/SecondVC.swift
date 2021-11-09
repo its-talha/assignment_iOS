@@ -10,20 +10,31 @@ import UIKit
 class SecondVC: UIViewController {
 
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        super.viewDidLoad()
-        //Dark mode
-        overrideUserInterfaceStyle = .dark
-        self.view.overrideUserInterfaceStyle = .dark
-        label.overrideUserInterfaceStyle = .dark
-        label.text = "Dark Mode"
-        
-        // light mode
-//        overrideUserInterfaceStyle = .light
-//        self.view.overrideUserInterfaceStyle = .light
-//        label.overrideUserInterfaceStyle = .light
-//        label.text = "Light Mode"
+                
+    }
+    @IBAction func changeMode(_ sender: Any) {
+        switch segmentControl.selectedSegmentIndex
+            {
+            case 0:
+                // light mode
+                overrideUserInterfaceStyle = .light
+                self.view.overrideUserInterfaceStyle = .light
+                label.overrideUserInterfaceStyle = .light
+                label.text = "Light Mode"
+
+            case 1:
+                //Dark mode
+                overrideUserInterfaceStyle = .dark
+                self.view.overrideUserInterfaceStyle = .dark
+                label.overrideUserInterfaceStyle = .dark
+                label.text = "Dark Mode"
+
+            default:
+                break
+            }
     }
 }

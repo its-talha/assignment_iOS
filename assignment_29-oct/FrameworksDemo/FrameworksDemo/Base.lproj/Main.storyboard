@@ -36,7 +36,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hours" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZDq-a4-N1n">
                                 <rect key="frame" x="30" y="594.5" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date &amp; Start time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKO-03-mfZ">
                                 <rect key="frame" x="30" y="260.5" width="198" height="29"/>
@@ -125,11 +125,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bJu-mt-FAE">
-                                <rect key="frame" x="141.5" y="74" width="131" height="32"/>
+                                <rect key="frame" x="156.5" y="74" width="101" height="32"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Light"/>
+                                    <segment title="Dark"/>
                                 </segments>
+                                <connections>
+                                    <action selector="changeMode:" destination="6kg-rW-NH9" eventType="valueChanged" id="Phy-GA-E55"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MUA-tA-QAI"/>
@@ -143,6 +146,7 @@
                     </view>
                     <connections>
                         <outlet property="label" destination="0dW-O4-HUg" id="i99-n2-Dy1"/>
+                        <outlet property="segmentControl" destination="bJu-mt-FAE" id="YyY-e1-JKd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dat-Fd-Ql3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
