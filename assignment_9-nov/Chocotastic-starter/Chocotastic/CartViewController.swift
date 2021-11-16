@@ -121,7 +121,6 @@ extension CartViewController: UpdateChocolateDelegate{
 //MARK: - IBActions
 extension CartViewController {
   @IBAction func reset() {
-//    ShoppingCart.sharedCart.chocolates = []
     ShoppingCart.sharedCart.chocolates.accept([])
     let _ = navigationController?.popViewController(animated: true)
   }
@@ -136,7 +135,6 @@ private extension CartViewController {
     }
     
     let cart = ShoppingCart.sharedCart
-    totalItemsLabel.text = cart.itemCountString
     
     let cost = cart.totalCost
     totalCostLabel.text = CurrencyFormatter.dollarsFormatter.string(from: cost)
