@@ -31,15 +31,20 @@ import RxSwift
 import RxCocoa
 
 class CartViewController: UIViewController {
-  @IBOutlet private var checkoutButton: UIButton!
-  @IBOutlet private var totalItemsLabel: UILabel!
-  @IBOutlet private var totalCostLabel: UILabel!
+    @IBOutlet private var checkoutButton: UIButton!
+    @IBOutlet private var totalItemsLabel: UILabel!
+    @IBOutlet private var totalCostLabel: UILabel!
+    @IBOutlet weak var itemsTableView: UITableView!
+    
+    var tableView: UITableView!
+    var Quantity: Int = 0
+    let disposeBag = DisposeBag()
+    var cost = ShoppingCart.sharedCart.totalCost
 
-  var tableView: UITableView!
 }
 
 //MARK: - View lifecycle
-extension CartViewController {
+extension CartViewController : UITableViewDelegate {
   override func viewDidLoad() {
     tableView = UITableView(frame: .zero)
     super.viewDidLoad()
@@ -64,6 +69,52 @@ extension CartViewController {
     }
 
     let allChocolates = Observable.just(itemStrings)
+    allChocolates.bind(to: itemsTableView.rx.items(cellIdentifier: "myCell", cellType: CartItemsCell.self)){
+        (tv,tableViewItem,cell) in
+        cell.delegate = self
+        self.Quantity = Int(String(tableViewItem.last!))!
+        cell.itemLbl.text = tableViewItem
+        print(tableViewItem.count)
+
+    }
+    .disposed(by: disposeBag)
+  }
+}
+
+extension CartViewController: UpdateChocolateDelegate{
+
+  func addChocolate(index: Int, cell: CartItemsCell) {
+    UpdateCart(isQuantityIncrease: true)
+    cost += 8
+    var str = cell.itemLbl.text
+    str?.removeLast()
+    str?.append(String(Quantity))
+    cell.itemLbl.text = str
+    totalCostLabel.text = CurrencyFormatter.dollarsFormatter.string(from: cost)
+  }
+  
+  func minusChocolate(index: Int, cell: CartItemsCell) {
+    UpdateCart(isQuantityIncrease: false)
+    cost -= 8
+    var str = cell.itemLbl.text
+    str?.removeLast()
+    str?.append(String(Quantity))
+    cell.itemLbl.text = str
+    totalCostLabel.text = CurrencyFormatter.dollarsFormatter.string(from: cost)
+  }
+  
+  func UpdateCart(isQuantityIncrease: Bool){
+    if Quantity > 9{
+      Quantity = 0
+    }
+    if (isQuantityIncrease){
+      self.Quantity += 1
+    }
+    else{
+      if Quantity > 0{
+        self.Quantity -= 1
+      }
+    }
   }
 }
 
